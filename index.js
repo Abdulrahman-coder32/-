@@ -54,19 +54,14 @@ app.use(express.json({ limit: '10mb' }));
 app.use(express.urlencoded({ extended: true, limit: '10mb' }));
 
 app.use(cors({
-  origin: (origin, callback) => {
-    if (!origin) return callback(null, true);
-
-    if (allowedOrigins.includes(origin)) {
-      return callback(null, true);
-    }
-
-    console.log("❌ Blocked CORS:", origin);
-    return callback(null, true); // مهم في الإنتاج
-  },
+  origin: [
+    'https://sahlawork.org',
+    'https://www.sahlawork.org',
+    'https://indigo-snake-340506.hostingersite.com',
+    'http://localhost:4200'
+  ],
   credentials: true
 }));
-
 // ================= ROOT ROUTE =================
 app.get('/', (req, res) => {
   res.send('✅ SahlaWork API is running');
