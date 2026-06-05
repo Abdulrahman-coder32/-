@@ -1,5 +1,6 @@
-import crypto from "crypto";
+const crypto = require("crypto");
 global.crypto = crypto;
+
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
