@@ -20,8 +20,8 @@ const server = http.createServer(app);
 
 // ================= ALLOWED ORIGINS =================
 const allowedOrigins = [
-  'https://sahlawork.org',
-  'https://www.sahlawork.org',
+  'https://sahla.blog',
+  'https://www.sahla.blog',
 
   // 👇 الدومين التجريبي بتاع Hostinger (مهم جدًا)
   'https://indigo-snake-340506.hostingersite.com',
@@ -55,8 +55,8 @@ app.use(express.urlencoded({ extended: true, limit: '10mb' }));
 
 app.use(cors({
   origin: [
-    'https://sahlawork.org',
-    'https://www.sahlawork.org',
+    'https://sahla.blog',
+    'https://www.sahla.blog',
     'https://indigo-snake-340506.hostingersite.com',
     'http://localhost:4200'
   ],
